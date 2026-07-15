@@ -1,0 +1,277 @@
+:root {
+  --color1: #02640f;
+  --color2: #ffffff;
+  --bg: #b4ffb4;
+  --primery: #0ac01d;
+  --primary-green: #065f46;
+  --accent-green: #10b981;
+  --bg-soft: #f9faf8;
+  --text-dark: #1a3a1a;
+  --text-muted: #6b7280;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--bg-soft);
+  color: var(--text-dark);
+  min-height: 3000px;
+}
+
+/* navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.4rem 3%;
+  background-color: var(--primery);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+}
+
+.navbar .navbar-logo {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.navbar .navbar-logo span {
+  color: var(--color2);
+}
+
+.navbar .navbar-nav a {
+  color: #fff;
+  display: inline-block;
+  font-size: 1.3rem;
+  margin: 0 1rem;
+}
+
+.navbar .navbar-nav a:hover {
+  color: var(--color1);
+}
+
+.navbar .navbar-nav a::after {
+  content: "";
+  display: block;
+  padding-bottom: 0.5rem;
+  border-bottom: 0.1rem solid var(--color1);
+  transform: scaleX(0);
+  transition: 0.2s linear;
+}
+
+.navbar .navbar-nav a:hover::after {
+  transform: scaleX(0.7);
+}
+
+.navbar .navbar-tambahan a {
+  color: #fff;
+  margin: 0 0.5rem;
+}
+
+.navbar .navbar-tambahan a:hover {
+  color: var(--color1);
+}
+
+#dashbord {
+  display: none;
+}
+
+/* page */
+.page {
+  min-height: 100vh;
+  width: auto;
+  display: flex;
+  align-items: center;
+  background-image: url("../img/bg-page.png");
+  background-repeat: no-repeat;
+  position: relative;
+  background-position: center;
+  background-size: cover;
+}
+
+.page::after {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 30%;
+  width: 100%;
+  bottom: 0;
+  background: linear-gradient(
+    0deg,
+    rgb(251, 252, 251) 8%,
+    rgba(179, 254, 178, 0) 100%
+  );
+}
+
+.content .btn {
+  color: #fff;
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 1rem 3rem;
+  font-size: 1.2rem;
+  background-color: var(--primery);
+  border-radius: 1.6rem;
+  box-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5%);
+}
+
+.content .btn:hover {
+  color: #009400;
+  background-color: #95fa95;
+}
+
+.content {
+  color: #fff;
+  font-size: 1.6rem;
+  margin-left: 2rem;
+  text-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5%);
+}
+
+.content span {
+  color: var(--bg);
+}
+.content p {
+  font-size: 1rem;
+  color: #fff;
+}
+
+.about {
+  color: #1a3a1a;
+  text-align: center;
+  font-size: 1.5rem;
+  padding: 6rem 2rem 7%;
+}
+
+.about p {
+  text-align: justify;
+  font-size: 1.3rem;
+  color: #2d5a2d;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 1.5rem 3rem;
+}
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.card {
+  width: 250px;
+  background-color: #ffffff;
+  border-radius: 1.6rem;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out,
+    box-shadow 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.card.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 20px 25px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 1.6rem 1.6rem 0 0;
+}
+
+.txtcard p {
+  color: var(--text-muted);
+  font-size: 14px;
+  padding: 0 1rem 1rem 1rem;
+  text-align: justify;
+}
+
+.card:nth-child(2) {
+  transition-delay: 0.2s;
+}
+.card:nth-child(3) {
+  transition-delay: 0.4s;
+}
+.card:nth-child(4) {
+  transition-delay: 0.6s;
+}
+
+.menu h3 {
+  color: #1a3a1a;
+  text-align: center;
+  font-size: 1.5rem;
+  padding: 6rem 2rem 10%;
+}
+
+/* laptop */
+@media (max-width: 1366px) {
+  html {
+    font-size: 100%;
+  }
+}
+
+/* tablet */
+@media (max-width: 768px) {
+  html {
+    font-size: 62.5%;
+  }
+  #dashbord {
+    display: inline-block;
+  }
+
+  .navbar .navbar-nav {
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    background-color: #808080;
+    width: 30rem;
+    height: 100vh;
+    transition: 0.3s;
+  }
+
+  .navbar .navbar-nav.active {
+    right: 0;
+  }
+
+  .navbar .navbar-nav a {
+    color: #333333;
+    display: block;
+    margin: 1.5rem;
+    padding: 0.5rem;
+    font-size: 2rem;
+  }
+
+  .navbar .navbar-nav a::after {
+    transform-origin: 0 0;
+  }
+}
+
+/* hp */
+@media (max-width: 450px) {
+  html {
+    font-size: 50%;
+  }
+  #dashbord {
+    display: inline-block;
+  }
+}
