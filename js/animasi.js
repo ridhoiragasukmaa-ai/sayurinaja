@@ -8,5 +8,5 @@ const observer = new IntersectionObserver((entries) => {
   });
 });
 
-const hiddenCards = document.querySelectorAll(".card");
+const hiddenCards = document.querySelectorAll(".gambar-a");
 hiddenCards.forEach((el) => observer.observe(el));
